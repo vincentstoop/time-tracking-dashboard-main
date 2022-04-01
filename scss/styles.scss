@@ -10,6 +10,10 @@
     font-weight: 300;
 }
 
+:root {
+    --radius: 1rem;
+}
+
 ul {
     list-style: none;
     margin: 0;
@@ -30,14 +34,24 @@ body {
 
 main {
     grid-area: main;
+    display: grid;
+    gap: 1.5rem;
+    &>section:first-of-type {
+        margin-block-end: -1rem;
+    }
     &>section+section {
         margin-block-start: 1rem;
+        // padding: 1rem;
     }
 }
 
-section {
-    border-radius: 1rem;
+section>div {
+    border-radius: var(--radius);
     background-color: $clr-neutral-700;
+}
+
+section:not(:first-of-type)>div {
+    padding: 1rem;
 }
 
 header {
@@ -45,7 +59,7 @@ header {
     align-items: center;
     padding: 1rem 1rem;
     background-color: $clr-primary-blue;
-    border-radius: 1rem;
+    border-radius: var(--radius);
     img {
         width: 75px;
         height: 75px;
@@ -86,4 +100,57 @@ nav {
             }
         }
     }
+}
+
+.card {
+    position: relative;
+    transform: translateY(1rem);
+    z-index: 10;
+}
+
+.card::after {
+    --spacing: 1.5rem;
+    position: absolute;
+    display: block;
+    content: '';
+    top: calc(-1 * var(--spacing));
+    height: calc(2 * var(--spacing));
+    left: 0;
+    right: 0;
+    border-radius: var(--radius);
+    background-position-x: 95%;
+    background-position-y: 5%;
+    background-repeat: no-repeat;
+    background-size: 2em;
+    z-index: -1;
+}
+
+.work::after {
+    background-color: $clr-primary-work;
+    background-image: url(../images/icon-work.svg);
+}
+
+.play::after {
+    background-color: $clr-primary-play;
+    background-image: url(../images/icon-play.svg);
+}
+
+.study::after {
+    background-color: $clr-primary-study;
+    background-image: url(../images/icon-study.svg);
+}
+
+.exercise::after {
+    background-color: $clr-primary-exercise;
+    background-image: url(../images/icon-exercise.svg);
+}
+
+.social::after {
+    background-color: $clr-primary-social;
+    background-image: url(../images/icon-social.svg);
+}
+
+.selfcare::after {
+    background-color: $clr-primary-selfcare;
+    background-image: url(../images/icon-self-care.svg);
 }
