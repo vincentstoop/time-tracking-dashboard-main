@@ -30,6 +30,7 @@ body {
     grid-template-areas: '. main .';
     background-color: $clr-neutral-900;
     color: #fff;
+    padding-block: 2rem;
 }
 
 main {
@@ -153,4 +154,31 @@ nav {
 .selfcare::after {
     background-color: $clr-primary-selfcare;
     background-image: url(../images/icon-self-care.svg);
+}
+
+h2 {
+    font-size: 1rem;
+    margin-block-end: .5em;
+}
+
+.card ul {
+    display: none;
+}
+
+.time-spent {
+    display: flex;
+    align-items: center;
+}
+
+.current {
+    // margin-block-end: 1rem;
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.previous {
+    font-size: .75rem;
+    margin-inline-start: auto;
+    font-weight: 300;
+    color: $clr-neutral-200;
 }

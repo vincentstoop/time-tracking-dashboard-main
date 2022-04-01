@@ -43,6 +43,7 @@ body {
   grid-template-areas: ". main .";
   background-color: hsl(226deg, 43%, 10%);
   color: #fff;
+  padding-block: 2rem;
 }
 
 main {
@@ -161,6 +162,32 @@ nav ul li a:hover, nav ul li a:active, nav ul li a:focus {
 .selfcare::after {
   background-color: hsl(43deg, 84%, 65%);
   background-image: url(../images/icon-self-care.svg);
+}
+
+h2 {
+  font-size: 1rem;
+  margin-block-end: 0.5em;
+}
+
+.card ul {
+  display: none;
+}
+
+.time-spent {
+  display: flex;
+  align-items: center;
+}
+
+.current {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.previous {
+  font-size: 0.75rem;
+  margin-inline-start: auto;
+  font-weight: 300;
+  color: hsl(236deg, 100%, 87%);
 }
 
 /*# sourceMappingURL=styles.css.map */
